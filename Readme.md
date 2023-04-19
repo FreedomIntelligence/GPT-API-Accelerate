@@ -4,7 +4,7 @@ The "GPT-API-Accelerate" project provides a set of Python classes for accelerati
 
 `PostRobot`: A class for generating responses to prompts using the OpenAI GPT-3.5 API.
 
-`demo_main`: it is a simple demo to run this project.
+`demo_main`: It is a simple demo to run this project.
 
 -------
 **How to run this project?**
