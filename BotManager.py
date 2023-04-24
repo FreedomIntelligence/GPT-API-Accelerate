@@ -56,7 +56,7 @@ class BotManager:
             else:
                 output_file_name = str(self.start) + "_" + str(self.end) + ".jsonl"
         with open(output_file_name, "w", encoding="utf-8") as f:
-            f.write(texts)
+            f.write(texts+"\n")
 
     def read_sample(self, file_name, start=0, end=None, role=None):
         result = []
@@ -83,7 +83,7 @@ class BotManager:
             return -1
         sample["output"] = self.get_string(sample, role)
         with open(self.result_output_dir + str(index) + ".json", mode="w", encoding="utf-8") as fw:
-            json.dump(sample, fw, ensure_ascii=False, indent=2)
+            json.dump(sample, fw, ensure_ascii=False)
         return index
 
     def get_string(self, sample, role):
