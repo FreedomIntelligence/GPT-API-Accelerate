@@ -49,14 +49,14 @@ class BotManager:
         generated_instructions = [open(os.path.join(self.result_output_dir, filename), encoding="utf-8").read() for
                                   filename
                                   in filenames]
-        texts = "".join(generated_instructions)
+        texts = "\n".join(generated_instructions)
         if output_file_name is None:
             if self.end is None:
                 output_file_name = str(self.start) + "_" + str(len(self.sample_list) - self.start) + ".jsonl"
             else:
                 output_file_name = str(self.start) + "_" + str(self.end) + ".jsonl"
         with open(output_file_name, "w", encoding="utf-8") as f:
-            f.write(texts+"\n")
+            f.write(texts)
 
     def read_sample(self, file_name, start=0, end=None, role=None):
         result = []
