@@ -15,6 +15,9 @@ The "GPT-API-Accelerate" project provides a set of Python classes for accelerati
 4. have an input jsonl file with the instruction and input (input.jsonl is an example).
 5. run the demo_main.py is ok if you do not have any special needs.
 6. refer to the following guideline to build your process. 
+
+Note: You may notice the result from ChatGPT is saved file by file. It is necessary for multiple processes and also convenient for resuming. It means even if the program shut down by errors or other unexpected reasons, you can restart it again and easily continue to generate the answer by ChatGPT without any other operation because the target file will be skipped if it has already been processed. 
+
 -------
 **BotManager Class**
 
