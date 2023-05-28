@@ -15,6 +15,8 @@ class BotManager:
         self.start = None
         self.end = None
         self.sample_list = []
+        self.model_name = ""
+        self.base_url = ""
 
     def set_api_key(self, api_file="api-key.txt", index=0):
         with open(api_file, encoding="utf-8", mode="r") as fr:
@@ -30,6 +32,18 @@ class BotManager:
                 lines = fr.readlines()
                 proxy = lines[index].strip()
                 self.proxy = proxy
+
+    def set_model(self, api_file="model.txt", index=0):
+        with open(api_file, encoding="utf-8", mode="r") as fr:
+            lines = fr.readlines()
+            model = lines[index].strip()
+            self.model_name = model
+
+    def set_base_url(self, api_file="base-url.txt", index=0):
+        with open(api_file, encoding="utf-8", mode="r") as fr:
+            lines = fr.readlines()
+            base_url = lines[index].strip()
+            self.base_url = base_url
 
     def set_result_output_dir(self, result_output_dir=None):
         if result_output_dir is None:
@@ -88,11 +102,13 @@ class BotManager:
 
     def get_string(self, sample, role):
         robot = PostRobot()
+        robot.base_url=self.base_url
+        robot.model_name=self.model_name
         robot.set_thinking_engine(self.api_key, self.proxy)
         if role is not None:
             robot.set_role(role)
         prompt = robot.get_prompt(sample)
-        response = robot.generate(prompt)
+        flag, response = robot.generate(prompt)
         return response
 
     def multi_process(self):
@@ -107,11 +123,13 @@ class BotManager:
             pool.close()
             pool.join()
 
-    def generate_sequences(self, api_index=0, proxy_index=-1, input_file_name="input.jsonl",
+    def generate_sequences(self, api_index=0, proxy_index=-1,model_index=0,base_url_index=0, input_file_name="input.jsonl",
                            output_file_name="output.jsonl"):
         bot_manager = BotManager()
         bot_manager.set_api_key(index=api_index)
         bot_manager.set_proxy(index=proxy_index)
+        bot_manager.set_model(index=model_index)
+        bot_manager.set_base_url(index=base_url_index)
         bot_manager.read_sample(file_name=input_file_name)
         bot_manager.set_result_output_dir()
         bot_manager.multi_process()

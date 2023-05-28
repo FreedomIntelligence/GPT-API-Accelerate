@@ -1,5 +1,4 @@
 import json
-from retrying import retry
 import requests
 
 
@@ -9,6 +8,7 @@ class PostRobot:
         self.proxy = None
         self.model_name = "gpt-3.5-turbo"
         self.role = None
+        self.base_url = "https://api.chatanywhere.cn/v1"
 
     def set_role(self, role):
         if self.role is None:
@@ -27,27 +27,35 @@ class PostRobot:
     def set_proxy(self, proxy):
         self.proxy = proxy
 
-    @retry(wait_fixed=10000, stop_max_attempt_number=3)
     def request_chatgpt(self, parameters):
-        url = "https://api.openai.com/v1/chat/completions"
+        url = self.base_url+"/chat/completions"
         headers = {
             "Content-Type": "application/json",
             "Authorization": f"Bearer {self.api_key}",
         }
         if self.proxy is None:
             raw_response = requests.post(url, headers=headers, json=parameters)
-            response = json.loads(raw_response.content.decode("utf-8"))["choices"][0][
-                "message"
-            ]
+            response = json.loads(raw_response.content.decode("utf-8"))
+            try:
+                content = response["choices"][0]["message"]["content"]
+                flag = True
+            except:
+                content = response["error"]["code"]
+                flag = False
+            return flag, content
         else:
             proxies = {"http": self.proxy, "https": self.proxy}
             raw_response = requests.post(
                 url, headers=headers, json=parameters, proxies=proxies
             )
-            response = json.loads(raw_response.content.decode("utf-8"))["choices"][0][
-                "message"
-            ]
-        return response
+            response = json.loads(raw_response.content.decode("utf-8"))
+            try:
+                content = response["choices"][0]["message"]["content"]
+                flag = True
+            except:
+                content = response["error"]["code"]
+                flag = False
+            return flag, content
 
     def get_prompt(self, sample):
         text = ""
@@ -68,5 +76,5 @@ class PostRobot:
             "model": self.model_name,
             "messages": messages
         }
-        response = self.request_chatgpt(parameters)
-        return response["content"]
+        flag, response = self.request_chatgpt(parameters)
+        return flag, response

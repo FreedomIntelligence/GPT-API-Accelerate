@@ -1,5 +1,10 @@
-{"instruction": "Give three tips for staying healthy.", "input": "", "output": ""}
-{"instruction": "What are the three primary colors?", "input": "", "output": ""}
-{"instruction": "Identify the odd one out.", "input": "Twitter, Instagram, Telegram", "output": ""}
-{"instruction": "Explain why the following fraction is equivalent to 1/4", "input": "4/16", "output": ""}
-{"instruction": "Write a short story in third person narration about a protagonist who has to make an important career decision.", "input": "", "output": ""}
+{"instruction": "我有一个挑战给你！你能编写一个脚本，生成一个客户和聊天机器人之间的对话，但是有一个不同寻常的地方吗？聊天机器人的回应应该需要一些推理才能理解，例如解决谜题。对话应该围绕产品推荐、常见问题和客户反馈展开。但是，问题是你必须确保聊天机器人的回答不仅仅是预先编程的答案，而需要逻辑和创造性思维。\n\n为了让挑战更高难度，你还能够确定GPT语言模型的三个具体限制，可能会影响它在为聊天机器人生成自然语言回应时的有效性吗？这需要一些研究和分析，但它肯定会让对话更加有趣！祝你好运！", "input": "", "output": ""}
+{"instruction": "在纳撒尼尔·霍桑的《红字》中，有一个名叫海丝特的角色在她的衣服上绣了一朵玫瑰。然而，整个故事中这朵玫瑰的颜色都发生了变化。使用一组线索，你能确定每种颜色的意义吗？\n1. 首次描述这朵玫瑰是深深的深红色。\n2. 海丝特遭受公开羞辱后，这朵玫瑰变成了淡粉色。\n3. 故事接近结尾时，这朵玫瑰再次变成了深红色。\n4. 这朵玫瑰的颜色代表了海丝特对她的罪行所感到的罪恶感水平。\n5. 玫瑰颜色越深，海丝特感到的罪恶感就越小。\n6. 玫瑰颜色越浅，海丝特感到的罪恶感就越大。\n7. 玫瑰颜色的变化也象征着海丝特情感和性格发展的变化。\n基于《红字》中玫瑰颜色所代表的象征意义，我们能推断出海丝特的情感和性格发展方面的什么内容？\n", "input": "", "output": ""}
+{"instruction": "我该如何使用Swift根据特定州或地区的税收法规和政策计算100美元交易的适当销售税率，同时确保计算考虑到可能适用于交易的任何豁免或特殊条件？计算可能需要交叉参考各种表格和代码，并涉及多个步骤。你能提供一个可以处理这个复杂计算的Swift示例代码，同时确保输出格式符合任何相关会计标准或报告要求吗？\n", "input": "", "output": ""}
+{"instruction": "你要解决的谜题是：当你在单词“loomy”的开头加上字母“g”时会得到什么？提示：它是一个形容有积极态度的人的词语。\n", "input": "", "output": ""}
+{"instruction": "描述以下两个数字之间的关系：730和810。\n", "input": "", "output": ""}
+{"instruction": "七个月宝宝消化不良怎么调理", "input": "", "output": ""}
+{"instruction": "白带三度清洁什么意思", "input": "", "output": ""}
+{"instruction": "被狗咬伤破皮了流血了需要我们怎么办", "input": "", "output": ""}
+{"instruction": "泛影葡胺做CT前多长时间服用", "input": "", "output": ""}
+{"instruction": "解脲支原体阳性和人型支原体阳性是什么病？", "input": "", "output": ""}
