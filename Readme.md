@@ -10,6 +10,8 @@ The "GPT-API-Accelerate" project provides a set of Python classes for accelerati
 
 -------
 # 🚀Update
+📢[version 0.0.3] We update the callback function to adopt the latest version of openai API. We also would like thanks for ChatGPT 4o with canvas for optimize the code.
+
 📢[version 0.0.2] Now, we support to use the third-party API if you have. Just add the url into base-url.txt to replace the official url.
 
 📢[version 0.0.1] We release GPT-API-Accelerate.
